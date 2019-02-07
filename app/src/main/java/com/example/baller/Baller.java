@@ -35,6 +35,12 @@ public class Baller {
         }
     }
 
+    @Override
+    public String toString()
+    {
+        return getFirst_name() + " " + getLast_name() + " Age: " + getAge() + " Jersey: " + getJersey_number() + " Height: " + getHeight_feet() + "'" + getHeight_inches() + "\"";
+    }
+
     public String getFirst_name() {
         return first_name;
     }
@@ -45,5 +51,13 @@ public class Baller {
 
     public int getJersey_number() {
         return jersey_number;
+    }
+
+    public int getHeight_feet() {
+        return height_feet;
+    }
+
+    public int getHeight_inches() {
+        return height_inches;
     }
 }

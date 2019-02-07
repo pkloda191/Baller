@@ -32,6 +32,7 @@ public class BallerAddNewActivity extends AppCompatActivity {
         int htft = Integer.parseInt(height_feetET.getText().toString());
         int htin = Integer.parseInt(height_inchesET.getText().toString());
         Baller ball = new Baller(fname, lname, jerseyNumber, age, htft, htin);
-        ball.display();
+        Core.addBaller(ball);
+        this.finish();
     }
 }
