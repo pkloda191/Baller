@@ -19,6 +19,17 @@ public class Baller {
         this.height_inches = height_inches;
     }
 
+
+    public Baller()
+    {
+        this.first_name = "FNAME";
+        this.last_name = "LNAME";
+        this.age = 0;
+        this.jersey_number = 0;
+        this.height_inches = 0;
+        this.height_feet = 0;
+    }
+
     public void display() {
         System.out.println(this.first_name + " " + this.last_name + " #" + this.jersey_number + " (" + this.age + ") " + this.height_feet + "' " + this.height_inches);
         //System.out.format("%s %c %s (%d)", this.first_name, this.middle_initial, this.last_name, this.age);
