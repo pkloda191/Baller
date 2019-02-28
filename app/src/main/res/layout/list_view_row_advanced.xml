@@ -8,24 +8,28 @@
         android:id="@+id/nameTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name" />
+        android:text="Name"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/ageTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Age" />
+        android:text="Age"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/jerseyNumberTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Jersey" />
+        android:text="Jersey"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/heightTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Height" />
+        android:text="Height"
+        android:textSize="30sp" />
 
 </android.widget.LinearLayout>

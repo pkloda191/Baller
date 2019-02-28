@@ -1,16 +1,22 @@
 package com.example.baller;
 
-public class Baller {
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
+
+public class Baller implements Serializable
+{
     //Fields
-    private String first_name;
-    private String last_name;
-    private int jersey_number;
-    private int age;
-    private int height_feet;
-    private int height_inches;
+    public String first_name;
+    public String last_name;
+    public int jersey_number;
+    public int age;
+    public int height_feet;
+    public int height_inches;
 
     //Constructor
-    public Baller(String first_name, String last_name, int jersey_number, int age, int height_feet, int height_inches) {
+    public Baller(String first_name, String last_name, int jersey_number, int age, int height_feet, int height_inches)
+    {
         this.first_name = first_name;
         this.last_name = last_name;
         this.jersey_number = jersey_number;
@@ -18,7 +24,6 @@ public class Baller {
         this.height_feet = height_feet;
         this.height_inches = height_inches;
     }
-
 
     public Baller()
     {
@@ -30,44 +35,56 @@ public class Baller {
         this.height_feet = 0;
     }
 
-    public void display() {
+    @Exclude
+    public void display()
+    {
         System.out.println(this.first_name + " " + this.last_name + " #" + this.jersey_number + " (" + this.age + ") " + this.height_feet + "' " + this.height_inches);
-        //System.out.format("%s %c %s (%d)", this.first_name, this.middle_initial, this.last_name, this.age);
     }
 
     //Getter/Setter Methods
-    public int getAge() {
+    @Exclude
+    public int getAge()
+    {
         return this.age;
     }
 
-    public void setAge(int age) {
-        if (age >= 1) {
+    @Exclude
+    public void setAge(int age)
+    {
+        if (age >= 1)
+        {
             this.age = age;
         }
     }
 
     @Override
+    @Exclude
     public String toString()
     {
         return getFirst_name() + " " + getLast_name() + " Age: " + getAge() + " Jersey: " + getJersey_number() + " Height: " + getHeight_feet() + "'" + getHeight_inches() + "\"";
     }
 
+    @Exclude
     public String getFirst_name() {
         return first_name;
     }
 
+    @Exclude
     public String getLast_name() {
         return last_name;
     }
 
+    @Exclude
     public int getJersey_number() {
         return jersey_number;
     }
 
+    @Exclude
     public int getHeight_feet() {
         return height_feet;
     }
 
+    @Exclude
     public int getHeight_inches() {
         return height_inches;
     }

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "773606602288",
+    "firebase_url": "https://baller-1bbe4.firebaseio.com",
+    "project_id": "baller-1bbe4",
+    "storage_bucket": "baller-1bbe4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773606602288:android:b8b63c85c6ad9d21",
+        "android_client_info": {
+          "package_name": "com.example.baller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773606602288-q598bqokktvu9108psdejlugt4u2mnof.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.baller",
+            "certificate_hash": "2e974ddfc493393d14d6140c26e4483193e7f681"
+          }
+        },
+        {
+          "client_id": "773606602288-ago1eir4u5lctablqfc1vlb4mglbjup9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkc-p4318JJBzUD9pdVCni4D3ldAmz0ls"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773606602288-ago1eir4u5lctablqfc1vlb4mglbjup9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

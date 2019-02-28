@@ -1,15 +1,12 @@
 package com.example.baller;
 
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.util.Arrays;
+import com.google.firebase.database.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         this.aa = new BallerCustomArrayAdapter(this, R.layout.list_view_row_advanced, Core.ballers);
         this.lv = (ListView)this.findViewById(R.id.listView);
         this.lv.setAdapter(aa);
+
+        //Start Listening for changes to the database
+        Core.listenForDatabaseChanges(); //non-blocking!!!!
     }
 
     @Override
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         this.aa.notifyDataSetChanged();
     }
-
 
     public void onAddPatientRecordPressed(View v) {
         Intent i = new Intent(this, BallerAddNewActivity.class);

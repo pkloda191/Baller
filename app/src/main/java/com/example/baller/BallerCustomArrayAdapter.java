@@ -19,8 +19,8 @@ public class BallerCustomArrayAdapter extends ArrayAdapter
                                      Baller[] list)
     {
         super(context, textViewResourceId , list);
-        mContext = context;
-        ballerList = list;
+        this.mContext = context;
+        this.ballerList = list;
         this.textViewResourceId = textViewResourceId;
     }
 
@@ -47,12 +47,11 @@ public class BallerCustomArrayAdapter extends ArrayAdapter
         TextView jerseyNumberTV = (TextView)listItem.findViewById(R.id.jerseyNumberTV);
         TextView heightTV = (TextView)listItem.findViewById(R.id.heightTV);
 
-
+        //set view row text boxes
         nameTV.setText(ba.getFirst_name() + " " + ba.getLast_name());
         ageTV.setText("Age: " + ba.getAge());
         jerseyNumberTV.setText("#" + ba.getJersey_number());
         heightTV.setText(ba.getHeight_feet() + "'" + ba.getHeight_inches() + "\"");
-
 
         //return the View after we have set all of the values
         return listItem;
