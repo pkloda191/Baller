@@ -11,7 +11,6 @@ import com.google.firebase.database.*;
 public class MainActivity extends AppCompatActivity {
 
     private ListView lv;
-    private BallerCustomArrayAdapter aa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.aa = new BallerCustomArrayAdapter(this, R.layout.list_view_row_advanced, Core.ballers);
+
+        Core.aa = new BallerCustomArrayAdapter(this, R.layout.list_view_row_advanced, Core.ballers);
         this.lv = (ListView)this.findViewById(R.id.listView);
-        this.lv.setAdapter(aa);
+        this.lv.setAdapter(Core.aa);
 
         //Start Listening for changes to the database
         Core.listenForDatabaseChanges(); //non-blocking!!!!
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart()
     {
         super.onRestart();
-        this.aa.notifyDataSetChanged();
+        Core.aa.notifyDataSetChanged();
     }
 
     public void onAddPatientRecordPressed(View v) {

@@ -14,6 +14,7 @@ public class Core
     private static int numBallers = 0;
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static DatabaseReference myRef = database.getReference("ballers");
+    public static BallerCustomArrayAdapter aa;
 
     public static void listenForDatabaseChanges()
     {
@@ -28,9 +29,9 @@ public class Core
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     Baller ba = ds.getValue(Baller.class);
-                    System.out.println("***** Data Changed");
-                    ba.display();
+                    Core.addBallerLocal(ba);
                 }
+                Core.aa.notifyDataSetChanged();
             }
 
             @Override
@@ -43,19 +44,23 @@ public class Core
         Core.myRef.addValueEventListener(prListener);
     }
 
-    public static void writePatientRecordToFirebase(Baller ba)
+    public static void writeBallerToFirebase(Baller ba)
     {
         //static context
         Core.myRef.push().setValue(ba);
     }
 
-    public static void addBaller(Baller ba)
+    public static void addBallerLocal(Baller ba)
     {
         //encapsulated the logic of adding patient records here
         Core.ballers[Core.numBallers] = ba;
         Core.theBallerStrings[Core.numBallers] = ba.toString();
         Core.numBallers++;
-        Core.writePatientRecordToFirebase(ba);
+    }
+
+    public static void addBallerDB(Baller ba)
+    {
+        Core.writeBallerToFirebase(ba);
     }
 
     public static String getBallers()
