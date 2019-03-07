@@ -15,10 +15,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        System.out.println("*** Linked List Test");
+        LinkedList ll = new LinkedList();
+        ll.addFront(7);
+        ll.addFront(2);
+        ll.addLast(6);
+        ll.addLast(93);
+        ll.display();
         //initializes the array of Strings so there are place holder strings in there
         for(int i = 0; i < Core.ballers.length; i++)
         {
-            Core.ballers[i] = new Baller();
+            //Core.ballers[i] = new Baller();
         }
 
         super.onCreate(savedInstanceState);

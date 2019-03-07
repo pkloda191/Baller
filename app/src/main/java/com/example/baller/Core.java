@@ -25,7 +25,7 @@ public class Core
             public void onDataChange(DataSnapshot dataSnapshot)
             {
                 // Get Post object and use the values to update the UI
-                System.out.println(dataSnapshot);
+                Core.numBallers = 0;
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     Baller ba = ds.getValue(Baller.class);
