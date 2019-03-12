@@ -3,7 +3,7 @@ package com.example.baller;
 public class Node
 {
     private int payload;
-    public Node nextNode;
+    private Node nextNode;
 
     public Node(int payload)
     {
